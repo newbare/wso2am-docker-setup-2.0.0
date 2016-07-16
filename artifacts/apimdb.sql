@@ -1,6 +1,7 @@
 CREATE Database `apimgtdb`;
 
 USE `apimgtdb`;
+SET SQL_MODE = 'ALLOW_INVALID_DATES';
 
 -- Start of IDENTITY Tables--
 
