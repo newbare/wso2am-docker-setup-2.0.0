@@ -16,6 +16,8 @@ services:
     build:
       context: .
       dockerfile: apim-traffic/Dockerfile
+    environment:
+      JVM_MEM_OPTS: -Xms256m -Xmx512m
   apim-keymanager:
     container_name: apim-keymanager
     depends_on: 
@@ -23,6 +25,8 @@ services:
     build:
       context: .
       dockerfile: apim-keymanager/Dockerfile
+    environment:
+      JVM_MEM_OPTS: -Xms256m -Xmx512m
   apim-gateway:
     container_name: apim-gateway
     depends_on: 
@@ -30,6 +34,8 @@ services:
     build:
       context: .
       dockerfile: apim-gateway/Dockerfile
+    environment:
+      JVM_MEM_OPTS: -Xms256m -Xmx512m
     ports:
       - "8280:8280"
       - "8243:8243"
@@ -43,6 +49,8 @@ services:
     ports:
       - "9763:9763"
       - "9443:9443"
+    environment:
+      JVM_MEM_OPTS: -Xms256m -Xmx512m
   apim-store:
     container_name: apim-store
     depends_on: 
@@ -53,3 +61,5 @@ services:
     ports:
       - "9764:9764"
       - "9444:9444"
+    environment:
+      JVM_MEM_OPTS: -Xms256m -Xmx512m
